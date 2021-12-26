@@ -7,6 +7,7 @@
 
 body {
   background-color: #24272e;
+  line-height: 1.5;
 }
 
 header {
@@ -17,6 +18,7 @@ header {
     rgba(110, 72, 170, 1) 100%
   );
   padding: 20px;
+  margin: 10px;
   border-radius: 50px;
 }
 

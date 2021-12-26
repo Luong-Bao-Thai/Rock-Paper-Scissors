@@ -27,9 +27,17 @@ function win(userChoice, computerChoice) {
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = `Computer got ${convertToWord(computerChoice)}. You win!`
     result_p.classList.add('green-glow');
-    setTimeout(function() {result_p.classList.remove('green-glow')},500);
+    setTimeout(function() {result_p.classList.remove('green-glow')},200);
     scoreBoard_div.classList.add('green-glow');
-    setTimeout(function() {scoreBoard_div.classList.remove('green-glow')},500);
+    setTimeout(function() {scoreBoard_div.classList.remove('green-glow')},200);
+    if (userScore == '5') {
+        alert('U win');
+        userScore = 0;
+        computerScore = 0;
+        userScore_span.innerHTML = '0';
+        computerScore_span.innerHTML = '0';
+        result_p.innerHTML = `Congratulation, try again?`;
+    }
 }
 function lose(userChoice, computerChoice) {
     computerScore ++;
@@ -37,18 +45,26 @@ function lose(userChoice, computerChoice) {
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = `Computer got ${convertToWord(computerChoice)}. You lose!`
     result_p.classList.add('red-glow');
-    setTimeout(function() {result_p.classList.remove('red-glow')},500);
+    setTimeout(function() {result_p.classList.remove('red-glow')},200);
     scoreBoard_div.classList.add('red-glow');
-    setTimeout(function() {scoreBoard_div.classList.remove('red-glow')},500);
+    setTimeout(function() {scoreBoard_div.classList.remove('red-glow')},200);
+    if (computerScore == '5') {
+        alert('U lose');
+        userScore = 0;
+        computerScore = 0;
+        userScore_span.innerHTML = '0';
+        computerScore_span.innerHTML = '0';
+        result_p.innerHTML = `Don't give up yet! Try again?`;
+    }
 }
 function draw(userChoice, computerChoice) {
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = `You all got ${convertToWord(computerChoice)}. Draw!`
     result_p.classList.add('yellow-glow');
-    setTimeout(function() {result_p.classList.remove('yellow-glow')},500);
+    setTimeout(function() {result_p.classList.remove('yellow-glow')},200);
     scoreBoard_div.classList.add('yellow-glow');
-    setTimeout(function() {scoreBoard_div.classList.remove('yellow-glow')},500);
+    setTimeout(function() {scoreBoard_div.classList.remove('yellow-glow')},200);
 }
 
 function game(userChoice) {
